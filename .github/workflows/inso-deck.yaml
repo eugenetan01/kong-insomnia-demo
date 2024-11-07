@@ -60,7 +60,7 @@ jobs:
       # Run Deck Sync for Konnect
       - name: Sync Configuration with Deck and Konnect
         env:
-          KONG_KONNECT_TOKEN: ${{ secrets.KONNECT_TOKEN }}
+          KONG_KONNECT_TOKEN: ${{ secrets.KONG_KONNECT_TOKEN }}
         run: |
           echo "Syncing configuration with Konnect..."
           deck gateway sync ./kong.yaml --konnect-addr https://us.api.konghq.com --konnect-token $KONG_KONNECT_TOKEN --konnect-control-plane-name apiops-demo --select-tag gitops
