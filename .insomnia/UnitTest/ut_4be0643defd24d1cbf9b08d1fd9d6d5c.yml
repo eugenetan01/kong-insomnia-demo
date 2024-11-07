@@ -1,0 +1,23 @@
+_id: ut_4be0643defd24d1cbf9b08d1fd9d6d5c
+type: UnitTest
+parentId: uts_7eb220b290744c2e95c1c9565999d780
+modified: 1730958543814
+created: 1730958517159
+requestId: req_699a711aa1274c06b42669a10500b2eb
+name: Returns 200
+code: |
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
+  // Parse the response body as JSON
+  const body = JSON.parse(response1.data);
+
+  // Check the response time
+  expect(response1.responseTime).to.be.at.most(2000);
+
+  expect(body).to.be.an('array');
+
+  body.forEach((item) => {
+    expect(item).to.have.property('id');
+  });
+  // Check the existence of specific properties
+metaSortKey: -1730958517159
