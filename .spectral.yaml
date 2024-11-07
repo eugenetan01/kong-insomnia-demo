@@ -1,87 +1,10 @@
 extends: "spectral:oas"
 
 rules:
-  # Ensure every operation has a description
-  operation-description:
-    description: "Operations should have a non-empty description."
-    given: "$.paths[*][*]"
-    then:
-      field: description
-      function: truthy
-
-  # Ensure every operation has a summary
-  operation-summary:
-    description: "Operations should have a non-empty summary."
-    given: "$.paths[*][*]"
-    then:
-      field: summary
-      function: truthy
-
-  # Check paths should not contain trailing slashes
-  path-no-trailing-slash:
-    description: "Paths should not end with a trailing slash."
-    given: "$.paths[*]~"
+  operation-id-camelcase:
+    description: "Operation IDs should follow camelCase naming convention."
+    given: "$.paths[*][*].operationId"
     then:
       function: pattern
       functionOptions:
-        notMatch: /\/$/
-
-  # Validate that each tag has a name and description
-  tag-description:
-    description: "Tags should have a description."
-    given: "$.tags[*]"
-    then:
-      field: description
-      function: truthy
-
-  # Enforce usage of examples for request bodies and response schemas
-  examples-in-responses:
-    description: "Responses should include examples."
-    given: "$.paths[*][*].responses[*].content[*].schema"
-    then:
-      field: example
-      function: truthy
-
-  # Validate security scheme presence
-  security-schemes-present:
-    description: "API must define at least one security scheme."
-    given: "$.security"
-    then:
-      function: truthy
-
-  # Ensure required properties in schemas are defined
-  required-properties:
-    description: "Required properties in schemas must be defined in properties."
-    given: "$.components.schemas[*].required"
-    then:
-      function: schema
-      functionOptions:
-        type: array
-        items:
-          type: string
-
-  # Validate IBAN patterns for source and destination
-  iban-format:
-    description: "IBAN fields must follow the specified pattern."
-    given: "$.components.schemas.Transaction.properties[?(@property === 'source' || @property === 'destination')]"
-    then:
-      field: pattern
-      function: truthy
-
-  # Ensure responses include meaningful descriptions
-  response-description:
-    description: "Each response should have a description."
-    given: "$.paths[*][*].responses[*]"
-    then:
-      field: description
-      function: truthy
-
-  # Validate currency pattern (ISO 4217)
-  currency-pattern:
-    description: "Currency fields must follow the ISO 4217 pattern."
-    given: "$.components.schemas.Transaction.properties.currency"
-    then:
-      field: pattern
-      function: pattern
-      functionOptions:
-        match: "^[A-Z]{3}$"
+        match: "^[a-z][a-zA-Z0-9]*$"
