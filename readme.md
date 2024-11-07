@@ -25,14 +25,20 @@
 
 3. add back the contacts section and see it updated in the current preview tab and spec
 
-4. paste in the openapi.yaml below and see the contact section updated in the preview tab
+4. show how you can define your own linting errors with the spectral file
+    - only allow camelCase for `operationId` field
+    - change `operationId` for `getTransaction` to `get-transaction` instead in Insomnia design tab
+    - highlight the linting error
+    - change back to camelCase
 
-5. click generate collection in the settings and go to the collection tab to start testing APIs
+5. paste in the openapi.yaml below and see the contact section updated in the preview tab
 
-6. go to cmd e and add the env vars into the collection
+6. click generate collection in the settings and go to the collection tab to start testing APIs
 
-7. start testing your API:
+7. go to cmd e and add the env vars into the collection
+
+8. start testing your API:
     - Create new transaction - if it fails, change the id in request body to a diff value
     - Get all transactions
 
-8. go to tests, create a new suite and run a test for List all transactions to return status = 200 OK
+9. go to tests, create a new suite and run a test for List all transactions to return status = 200 OK
