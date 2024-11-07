@@ -1,0 +1,9 @@
+{
+  "scheme": "http",
+  "base_path": "",
+  "host": "localhost:3000",
+  "apikey": "apikey",
+  "bearerToken": "bearerToken",
+  "base_url": "{{ _.host }}",
+  "id": "b88f7029-fa93-41a5-9462-4884e544bf63"
+}
