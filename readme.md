@@ -1,15 +1,15 @@
 # Setup
-1. git clone this repo
+1. Create a project on Insomnia and git clone this project in Insomnia
 
     - navigate to the collection tab and change the env vars (cmd-e) to use the `OpenAPI env localhost:3000` env
 
-2. start the services:
+3. start the services:
 
     ```bash
     docker-compose -f ./docker/docker-compose-bankong-combined_local_portchange.yaml up -d
     ```
 
-3. check the services are running:
+4. check the services are running:
     - frontend: http://localhost:29080/
     - backend: http://localhost:3000/transactions
 
