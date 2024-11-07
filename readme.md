@@ -32,7 +32,7 @@
 6. go to cmd e and add the env vars into the collection
 
 7. start testing your API:
-  - Create new transaction - if it fails, change the id in request body to a diff value
-  - Get all transactions
+    - Create new transaction - if it fails, change the id in request body to a diff value
+    - Get all transactions
 
 8. go to tests, create a new suite and run a test for List all transactions to return status = 200 OK
