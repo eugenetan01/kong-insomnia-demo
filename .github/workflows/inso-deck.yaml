@@ -55,7 +55,7 @@ jobs:
       - name: Validate Configuration with Deck for Konnect
         run: |
           echo "Validating configuration with Konnect..."
-          deck gateway validate --konnect-compatibility
+          deck gateway validate --konnect-compatibility --config ./kong.yaml
 
       # Run Deck Sync for Konnect
       - name: Sync Configuration with Deck and Konnect
