@@ -14,5 +14,25 @@
     ```
 
 3. check the services are running:
-    1. frontend: http://localhost:29080/
-    2. backend: http://localhost:3000/transactions
+    - frontend: http://localhost:29080/
+    - backend: http://localhost:3000/transactions
+
+# Execution:
+
+1. go to spec tab of the cloned collection and show how you can edit the openapi specs
+
+2. show the linting errors by deleting the `contacts` section and how you can edit and see the preview tabs update
+
+3. add back the contacts section and see it updated in the current preview tab and spec
+
+4. paste in the openapi.yaml below and see the contact section updated in the preview tab
+
+5. click generate collection in the settings and go to the collection tab to start testing APIs
+
+6. go to cmd e and add the env vars into the collection
+
+7. start testing your API:
+  a. Create new transaction - if it fails, change the id in request body to a diff value
+  b. Get all transactions
+
+8. go to tests, create a new suite and run a test for List all transactions to return status = 200 OK
