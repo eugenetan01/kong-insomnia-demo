@@ -1,9 +1,5 @@
 # Setup
-1. git clone this url on your insomnia client after creating a new project:
-
-    ```bash
-    git clone https://github.com/eugenetan01/kong-edu-insomnia.git
-    ```
+1. git clone this repo
 
     - navigate to the collection tab and change the env vars (cmd-e) to use the `OpenAPI env localhost:3000` env
 
