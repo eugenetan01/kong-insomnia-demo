@@ -6,7 +6,7 @@
 2. start the services:
 
     ```bash
-    docker-compose -f ./bankong/docker/docker-compose-bankong-combined_local_portchange.yaml up -d
+    docker-compose -f ./docker/docker-compose-bankong-combined_local_portchange.yaml up -d
     ```
 
 3. check the services are running:
@@ -38,3 +38,10 @@
     - Get all transactions
 
 9. go to tests, create a new suite and run a test for List all transactions to return status = 200 OK
+
+# References:
+
+1. See the `./demo-scenes/resources/insomnia-env-var.json` for env vars if needed
+
+2. See the `./demo-scenes/wrong-format-spec.yaml` file for a spec that violates spectral linting errors
+
