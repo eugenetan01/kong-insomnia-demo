@@ -55,7 +55,7 @@ jobs:
       - name: Validate Configuration with Deck for Konnect
         run: |
           echo "Validating configuration with Konnect..."
-          deck gateway validate --konnect-compatibility true --config ./kong.yaml --konnect-addr https://us.api.konghq.com--konnect-token $KONG_KONNECT_TOKEN --konnect-control-plane-name apiops-demo
+          deck gateway validate --konnect-compatibility true -s ./kong.yaml --konnect-addr https://us.api.konghq.com--konnect-token $KONG_KONNECT_TOKEN --konnect-control-plane-name apiops-demo
 
       # Run Deck Sync for Konnect
       - name: Sync Configuration with Deck and Konnect
