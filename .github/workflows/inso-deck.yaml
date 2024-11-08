@@ -31,6 +31,10 @@ jobs:
           sudo tar -xf inso.tar.xz -C /tmp/
           cp /tmp/inso /usr/local/bin/
 
+      # Run docker-compose
+      - name: Docker-compose - Build the stack
+        run: docker-compose -f ./docker/docker-compose-bankong-combined_local_portchange.yaml up -d
+
       # Run Inso tests // run this if you have a service deployed somewhere to test the test suite against
       #- name: Run Inso Tests
       #  run: |
