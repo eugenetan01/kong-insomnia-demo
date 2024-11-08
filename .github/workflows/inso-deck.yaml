@@ -31,14 +31,25 @@ jobs:
           sudo tar -xf inso.tar.xz -C /tmp/
           cp /tmp/inso /usr/local/bin/
 
+      # Install docker-compose
+      - name: Install Compose
+        uses: ndeloof/install-compose-action@v0.0.1
+        with:
+          version: v2.1.0 # defaults to 'latest'
+          legacy: true # will also install in PATH as `docker-compose`
+
+      # Verify docker-compose running
+      - name: Install Compose
+        run: docker-compose --version
+
       # Run docker-compose
       - name: Docker-compose - Build the stack
         run: docker-compose -f ./docker/docker-compose-bankong-combined_local_portchange.yaml up -d
 
       # Run Inso tests // run this if you have a service deployed somewhere to test the test suite against
-      #- name: Run Inso Tests
-      #  run: |
-      #    inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4
+      - name: Run Inso Tests
+        run: |
+          inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4
 
       # Install Deck
       - name: Install DecK
