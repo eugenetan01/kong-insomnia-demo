@@ -40,12 +40,6 @@
 9. go to tests, create a new suite and run a test for List all transactions to return status = 200 OK
 
 10. To showcase API-Ops, make an empty commit and push to dev branch to run the github action
-
-    ```bash
-    git commit --allow-empty -m "Trigger CI/CD pipeline"
-    git push origin dev
-    ```
-
     - Show the `.github/workflows/inso-deck.yaml` that it runs on push to dev branch and PR to master
     - Show the steps in the github action:
           - running the insomnia unit tests defined
@@ -53,6 +47,11 @@
           - validating the decK file 
           - pushing it as gateway config to my control plane
     - verify by going to your control plane to see the APIs in the spec onboarded to the gateway
+   
+    ```bash
+    git commit --allow-empty -m "Trigger CI/CD pipeline"
+    git push origin dev
+    ```
       
 # References:
 
