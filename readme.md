@@ -39,24 +39,45 @@
 
 9. go to tests, create a new suite and run a test for List all transactions to return status = 200 OK
 
-10. To showcase API-Ops, make an empty commit and push to dev branch to run the github action
+10. to showcase API-Ops, make an empty commit and push to dev branch to run the github action
     - Show the `.github/workflows/inso-deck.yaml` that it runs on push to dev branch and PR to master
     - Show the steps in the github action:
           - running the insomnia unit tests defined
           - converting my openapi specs to kong gateway config via decK
-          - validating the decK file 
+          - validating the decK file
           - pushing it as gateway config to my control plane
     - verify by going to your control plane to see the APIs in the spec onboarded to the gateway
     - run below commands to trigger
-   
+
         ```bash
         git commit --allow-empty -m "Trigger CI/CD pipeline"
         git push origin dev
         ```
-      
+# Cleanup
+
+1. navigate to `./cleanup/konnect` folder and create a venv for the python project
+
+    ```python
+    python3 -m venv myenv
+    source myenv/bin/activate
+    ```
+
+2. install the requirements.txt for the venv
+
+    `pip3 install -r requirements.txt`
+
+3. create a .env file with the following vars:
+
+    ```python
+    KONNECT_API_BASE_URL="https://global.api.konghq.com"
+    KONNECT_AUTH_TOKEN="<your-konnect-PAT>"
+    CONTROL_PLANE_ID="<your-control-plane-id>"
+    ```
+
+4. run the `python3 cleanup-konnect.py` to remove the gateway services and routes
+
 # References:
 
 1. See the `./demo-scenes/resources/insomnia-env-var.json` for env vars if needed
 
 2. See the `./demo-scenes/wrong-format-spec.yaml` file for a spec that violates spectral linting errors
-
