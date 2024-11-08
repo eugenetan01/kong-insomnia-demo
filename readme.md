@@ -47,11 +47,12 @@
           - validating the decK file 
           - pushing it as gateway config to my control plane
     - verify by going to your control plane to see the APIs in the spec onboarded to the gateway
+    - run below commands to triggre
    
-    ```bash
-    git commit --allow-empty -m "Trigger CI/CD pipeline"
-    git push origin dev
-    ```
+        ```bash
+        git commit --allow-empty -m "Trigger CI/CD pipeline"
+        git push origin dev
+        ```
       
 # References:
 
