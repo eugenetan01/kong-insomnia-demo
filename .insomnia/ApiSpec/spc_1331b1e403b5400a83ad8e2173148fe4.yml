@@ -1,14 +1,14 @@
 _id: spc_1331b1e403b5400a83ad8e2173148fe4
 type: ApiSpec
 parentId: wrk_03837bb6835248c580142b800330c851
-modified: 1730973316398
+modified: 1733811377665
 created: 1730958500462
-fileName: New Document
+fileName: InsomniaDemo
 contents: >-
   openapi: 3.0.1
 
   info:
-    version: 1.1.0
+    version: 1.1.1
     title: Transactions API of BanKonG
     description: | 
       This API provides you access to the transactions of a logged in user. You can get, create, change and delete transactions (of course always depending on permissions).
@@ -26,10 +26,12 @@ contents: >-
       description: local sandbox environment
 
 
+
     
   security:
     - ApiKeyAuth: [] 
     - OIDC: []
+
 
 
     
@@ -39,6 +41,7 @@ contents: >-
     description: Everything about transactions
     externalDocs:
       url: http://docs.bankong.com/transations
+
 
 
     
