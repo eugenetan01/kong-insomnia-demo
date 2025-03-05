@@ -1,11 +1,11 @@
-_id: req_33266309cf76483696bed7a7f4c36d4a
+_id: req_c915c9881b1a4dca8d4f64c9f739ec0d
 type: Request
-parentId: fld_0e80579e4264462ba5c6683c055eaefd
-modified: 1730958511890
-created: 1730958511890
+parentId: fld_fb696016751840aa9094c3d3d3611dfc
+modified: 1741210902632
+created: 1741210902632
 url: "{{ _.base_url }}/transactions/{{ _.id }}"
 name: Get specific transactions
-description: ""
+description: Returns a post by id
 method: GET
 body: {}
 parameters: []
@@ -16,7 +16,7 @@ authentication:
   value: "{{ _.apikey }}"
   addTo: header
 preRequestScript: null
-metaSortKey: -1730958511890
+metaSortKey: -1741210902632
 isPrivate: false
 pathParameters: null
 afterResponseScript: null

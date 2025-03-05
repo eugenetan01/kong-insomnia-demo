@@ -1,12 +1,12 @@
-_id: req_699a711aa1274c06b42669a10500b2eb
+_id: req_33f9a4c439d94f67b1c094a18ad0f0cd
 type: Request
-parentId: fld_0e80579e4264462ba5c6683c055eaefd
-modified: 1730958801260
-created: 1730958511889
-url: "{{ _.base_url }}/transactions"
-name: List all transactions
-description: ""
-method: GET
+parentId: fld_fb696016751840aa9094c3d3d3611dfc
+modified: 1741210902632
+created: 1741210902632
+url: "{{ _.base_url }}/transactions/{{ _.id }}"
+name: Cancel a transaction
+description: Cancel a transaction
+method: DELETE
 body: {}
 parameters: []
 headers: []
@@ -16,7 +16,7 @@ authentication:
   value: "{{ _.apikey }}"
   addTo: header
 preRequestScript: null
-metaSortKey: -1730958511889
+metaSortKey: -1741210902632
 isPrivate: false
 pathParameters: null
 afterResponseScript: null
