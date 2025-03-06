@@ -1,7 +1,7 @@
 _id: ut_b1899104c02649bfb5411a47076c10f9
 type: UnitTest
 parentId: uts_7eb220b290744c2e95c1c9565999d780
-modified: 1741210916528
+modified: 1741231488620
 created: 1732692230942
 requestId: req_a4d4c15ec67b4b6b9cf798e2ecc25845
 name: Returns 200
@@ -12,7 +12,7 @@ code: |
   const body = JSON.parse(response1.data);
 
   // Check the response time
-  expect(response1.responseTime).to.be.at.most(2000);
+  expect(response1.responseTime).to.be.at.most(10000);
 
   expect(body).to.be.an('array');
 

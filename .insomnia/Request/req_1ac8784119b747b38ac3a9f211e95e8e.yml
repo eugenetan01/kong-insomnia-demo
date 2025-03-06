@@ -1,7 +1,7 @@
 _id: req_1ac8784119b747b38ac3a9f211e95e8e
 type: Request
 parentId: fld_fb696016751840aa9094c3d3d3611dfc
-modified: 1741210902631
+modified: 1741231446164
 created: 1741210902631
 url: "{{ _.base_url }}/transactions"
 name: Create new transaction
@@ -11,7 +11,7 @@ body:
   mimeType: application/json
   text: |-
     {
-      "id": 42,
+      "id": 43,
       "source": "GR872659435350353",
       "senderName": "Max Mustermann",
       "destination": "DE8412325587359375895",
