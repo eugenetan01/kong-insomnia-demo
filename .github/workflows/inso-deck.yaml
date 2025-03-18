@@ -3,7 +3,7 @@ name: Run Inso and Deck with Konnect
 on:
   push:
     branches:
-      - dev
+      - kong-ee
   pull_request:
     branches:
       - main
@@ -18,45 +18,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Set up Node.js for Inso
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      # Install Inso using official action
+      - name: Setup Inso
+        uses: kong/setup-inso@v1
         with:
-          node-version: "16"
+          version: "8.6.1"
 
-      # Install Inso
-      - name: Install Insomnia
-        run: |
-          curl -sL https://github.com/Kong/insomnia/releases/download/lib%408.6.1/inso-linux-8.6.1.tar.xz -o inso.tar.xz
-          sudo tar -xf inso.tar.xz -C /tmp/
-          cp /tmp/inso /usr/local/bin/
-
-      # Install docker-compose
-      - name: Install Compose
-        uses: ndeloof/install-compose-action@v0.0.1
+      # Install Deck using official action
+      - name: Setup decK
+        uses: kong/setup-deck@v1
         with:
-          version: v2.1.0 # defaults to 'latest'
-          legacy: true # will also install in PATH as `docker-compose`
-
-      # Verify docker-compose running
-      - name: Install Compose
-        run: docker-compose --version
-
-      # Run docker-compose
-      - name: Docker-compose - Build the stack
-        run: docker-compose -f ./docker/docker-compose-bankong-combined_local_portchange.yaml up -d
-
-      # Run Inso tests // run this if you have a service deployed somewhere to test the test suite against
-      - name: Run Inso Tests
-        run: |
-          inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4
-
-      # Install Deck
-      - name: Install DecK
-        run: |
-          curl -sL https://github.com/kong/deck/releases/download/v1.40.2/deck_1.40.2_linux_amd64.tar.gz -o deck.tar.gz
-          tar -xf deck.tar.gz -C /tmp
-          cp /tmp/deck /usr/local/bin/
+          version: "1.40.2"
 
       # Check Deck is installed
       - name: Deck version
@@ -78,4 +50,9 @@ jobs:
           KONG_KONNECT_TOKEN: ${{ secrets.KONG_KONNECT_TOKEN }}
         run: |
           echo "Syncing configuration with Konnect..."
-          deck gateway sync ./kong.yaml --konnect-addr https://us.api.konghq.com --konnect-token $KONG_KONNECT_TOKEN --konnect-control-plane-name apiops-demo --select-tag gitops
+          deck gateway sync ./kong.yaml -w TribeA --select-tag gitops
+
+      # Run Inso tests
+      - name: Run Inso Tests
+        run: |
+          inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4
