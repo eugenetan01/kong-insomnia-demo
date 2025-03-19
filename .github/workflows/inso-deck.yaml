@@ -22,7 +22,7 @@ jobs:
       - name: Setup Inso
         uses: kong/setup-inso@v1
         with:
-          version: "8.6.1"
+          inso-version: "8.6.1"
 
       # Install Deck using official action
       - name: Setup decK
