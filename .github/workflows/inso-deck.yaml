@@ -30,6 +30,16 @@ jobs:
         with:
           version: "1.40.2"
 
+      # Install npm
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # Install kong-portal-cli via npm
+      - name: Install Kong Portal CLI
+        run: npm install -g kong-portal-cli
+
       # Check Deck is installed
       - name: Deck version
         run: deck version
@@ -56,3 +66,7 @@ jobs:
       - name: Run Inso Tests
         run: |
           inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4
+
+      - name: Deploy to portal
+        run: |
+          portal deploy TribeA
