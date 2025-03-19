@@ -14,7 +14,7 @@ info:
     email: support@bankong.com
 
 servers:
-  - url: https://sfp8q4jp-3000.asse.devtunnels.ms:3000
+  - url: https://sfp8q4jp-3000.asse.devtunnels.ms
     description: local sandbox environment
 
 security:
