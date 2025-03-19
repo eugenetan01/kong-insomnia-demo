@@ -1,0 +1,19 @@
+_id: env_ec7873bcfd834efb9366a866a11ee364
+type: Environment
+parentId: env_eeffcb9184b1ab85e651a6e3be6fee9c32521ebe
+modified: 1742345564444
+created: 1742345551144
+name: New Environment
+data:
+  test: empty
+dataPropertyOrder: null
+color: null
+isPrivate: false
+metaSortKey: 1742345551144
+environmentType: kv
+kvPairData:
+  - id: envPair_7eb5723a179e40ffbfb873f0138e28b7
+    name: test
+    value: empty
+    type: str
+    enabled: true
