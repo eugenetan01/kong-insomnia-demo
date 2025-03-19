@@ -175,6 +175,32 @@
          }
       }
       ```
+
+4. Ensure the route for `Get all transactions` include `OPTIONS` also
+
+5. Go to developer portal and sign up for user
+
+6. Login to Kong Manager -> Developer portal to approve the user
+
+7. login again to see the specs visibly
+
+8. Create an App and give a name and random redirect uri
+
+9. Generate a new credential or just copy the `client id` field value
+
+10. Scroll down to `Services` and click activate to request for approval to start using the APIs
+
+10. Go back to the Transactions API and call the API again to see a failed error
+
+11. Go back to the Transactions API and click `Authorize` and paste in the value of step 9 in the `apikey` field and click `Authorize`
+
+12. Go to `List All Transactions` and try out the API and see a `403 - You cannot consume this service` error
+
+13. Go back to developer portal -> go to Applications -> choose the application -> click requested access and approve
+
+14. Go back to `List All Transactions` and try out the API and see a `200 OK` response
+
+
 # Cleanup
 
 1. Run the command: `deck gateway reset -w TribeA` to remove the gateway services and routes
@@ -184,3 +210,5 @@
 1. See the `./demo-scenes/resources/insomnia-env-var.json` for env vars if needed
 
 2. See the `./demo-scenes/wrong-format-spec.yaml` file for a spec that violates spectral linting errors
+
+3. [Link](https://support.konghq.com/support/s/article/How-to-set-spec-file-can-only-be-read-when-login-in-Developer-Portal) to disable OAS from being visible without login
