@@ -50,7 +50,7 @@ jobs:
           KONG_KONNECT_TOKEN: ${{ secrets.KONG_KONNECT_TOKEN }}
         run: |
           echo "Syncing configuration with Konnect..."
-          deck gateway sync ./kong.yaml -w TribeA --select-tag gitops
+          deck gateway sync ./kong.yaml -w TribeA --select-tag gitops --kong-addr https://sfp8q4jp-8001.asse.devtunnels.ms
 
       # Run Inso tests
       - name: Run Inso Tests
