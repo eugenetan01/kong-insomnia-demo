@@ -29,30 +29,11 @@ tags:
 
 paths:
   /transactions:
-    options:
-      summary: Preflight request for transactions
-      description: CORS preflight request for transactions endpoint.
-      responses:
-        "204":
-          description: No content
-          headers:
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: "*"
-            Access-Control-Allow-Methods:
-              schema:
-                type: string
-                example: "GET, POST, OPTIONS"
-            Access-Control-Allow-Headers:
-              schema:
-                type: string
-                example: "Content-Type, Authorization, apikey"
-
     get:
+      description: Lists all transactions
       summary: List all transactions
-      operationId: "listTransactions"
       tags: ["Transactions"]
+      operationId: "listTranactions"
       responses:
         "200":
           description: List of transactions
@@ -60,11 +41,11 @@ paths:
             "application/json":
               schema:
                 $ref: "#/components/schemas/TransactionsList"
-
     post:
+      description: Initiate a transaction
       summary: Create new transaction
-      operationId: "initiateTransaction"
       tags: ["Transactions"]
+      operationId: "initiateTransaction"
       requestBody:
         content:
           application/json; charset=utf-8:
@@ -72,41 +53,23 @@ paths:
               $ref: "#/components/schemas/Transaction"
       responses:
         "200":
-          description: Initiated transaction
+          description: initiated transaction
           content:
             "application/json":
               schema:
                 $ref: "#/components/schemas/Transaction"
 
   /transactions/{id}:
-    options:
-      summary: Preflight request for specific transaction
-      description: CORS preflight request for transactions/{id} endpoint.
-      responses:
-        "204":
-          description: No content
-          headers:
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: "*"
-            Access-Control-Allow-Methods:
-              schema:
-                type: string
-                example: "GET, PATCH, DELETE, OPTIONS"
-            Access-Control-Allow-Headers:
-              schema:
-                type: string
-                example: "Content-Type, Authorization, apikey"
-
     get:
-      summary: Get specific transaction
-      operationId: "getTransaction"
+      description: Returns a post by id
+      summary: Get specific transactions
       tags: ["Transactions"]
+      operationId: "getTransaction"
       parameters:
         - name: id
           in: path
           required: true
+          description: The transaction id.
           schema:
             $ref: "#/components/schemas/TransactionId"
       responses:
@@ -118,11 +81,11 @@ paths:
                 $ref: "#/components/schemas/Transaction"
         "404":
           description: Transaction not found
-
     patch:
+      description: Change a transaction
       summary: Update a transaction
-      operationId: "changeTransaction"
       tags: ["Transactions"]
+      operationId: "changeTransaction"
       requestBody:
         content:
           application/json; charset=utf-8:
@@ -132,6 +95,7 @@ paths:
         - name: id
           in: path
           required: true
+          description: The transaction id.
           schema:
             $ref: "#/components/schemas/TransactionId"
       responses:
@@ -143,15 +107,16 @@ paths:
                 $ref: "#/components/schemas/Transaction"
         "404":
           description: Transaction not found
-
     delete:
+      description: Cancel a transaction
       summary: Cancel a transaction
-      operationId: "cancelTransaction"
       tags: ["Transactions"]
+      operationId: "cancelTransaction"
       parameters:
         - name: id
           in: path
           required: true
+          description: The transaction id.
           schema:
             $ref: "#/components/schemas/TransactionId"
       responses:
