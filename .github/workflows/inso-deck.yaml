@@ -3,7 +3,7 @@ name: Run Inso and Deck with Konnect
 on:
   push:
     branches:
-      - kong-ee
+      - kong-ee-tribe-B
   pull_request:
     branches:
       - main
