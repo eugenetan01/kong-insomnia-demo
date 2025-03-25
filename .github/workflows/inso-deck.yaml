@@ -60,7 +60,7 @@ jobs:
           KONG_KONNECT_TOKEN: ${{ secrets.KONG_KONNECT_TOKEN }}
         run: |
           echo "Syncing configuration with Konnect..."
-          deck gateway sync ./kong.yaml -w TribeA --select-tag gitops --kong-addr https://sfp8q4jp-8001.asse.devtunnels.ms
+          deck gateway sync ./kong.yaml -w TribeB --select-tag gitops --kong-addr https://sfp8q4jp-8001.asse.devtunnels.ms
 
       - name: Sleep for 10 seconds
         run: sleep 10s
@@ -73,4 +73,4 @@ jobs:
 
       - name: Deploy to portal
         run: |
-          portal deploy TribeA
+          portal deploy TribeB
