@@ -1,0 +1,36 @@
+_format_version: "3.0"
+_info:
+  defaults: {}
+  select_tags:
+  - plugins
+  - cors
+_workspace: TribeA
+plugins:
+- config:
+    credentials: true
+    exposed_headers: null
+    headers:
+    - apikey
+    - Content-Type
+    max_age: 3600
+    methods:
+    - GET
+    - HEAD
+    - PUT
+    - PATCH
+    - POST
+    - DELETE
+    - OPTIONS
+    - TRACE
+    - CONNECT
+    origins:
+    - '*'
+    preflight_continue: false
+    private_network: false
+  enabled: true
+  name: cors
+  protocols:
+  - grpc
+  - grpcs
+  - http
+  - https
