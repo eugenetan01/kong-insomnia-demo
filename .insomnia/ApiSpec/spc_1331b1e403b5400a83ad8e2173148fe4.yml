@@ -30,10 +30,12 @@ contents: >-
 
 
 
+
     
   security:
     - ApiKeyAuth: [] 
     - OIDC: []
+
 
 
 
@@ -47,6 +49,7 @@ contents: >-
     description: Everything about transactions
     externalDocs:
       url: http://docs.bankong.com/transations
+
 
 
 
