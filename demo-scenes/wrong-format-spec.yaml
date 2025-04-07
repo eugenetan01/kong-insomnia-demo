@@ -27,7 +27,7 @@ paths:
       description: Lists all transactions
       summary: List all transactions
       tags: ["Transactions"]
-      operationId: "listTranactions"
+      operationId: "list_Tranactions"
       responses:
         "200":
           description: List of transactions
