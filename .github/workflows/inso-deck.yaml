@@ -63,11 +63,11 @@ jobs:
         run: deck version
 
       - name: Run Spectral Lint
-        run: inso lint spec ./demo-scenes/openapi-spec.yaml
+        run: inso lint spec ./demo-scenes/wrong-format-spec.yaml
 
       # Convert OpenAPI specs to DecK
       - name: Generate Kong declarative configuration from Spec
-        run: deck file openapi2kong --spec ./demo-scenes/openapi-spec.yaml --output-file ./kong.yaml --select-tag gitops
+        run: deck file openapi2kong --spec ./demo-scenes/wrong-format-spec.yaml --output-file ./kong.yaml --select-tag gitops
 
       # Optional: Validate Configuration with Deck for Konnect
       - name: Validate Configuration with Deck for Konnect
