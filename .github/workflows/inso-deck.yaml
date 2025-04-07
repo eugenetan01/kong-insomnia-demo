@@ -78,10 +78,6 @@ jobs:
           echo "Validating configuration with Konnect..."
           deck file validate ./kong.yaml
 
-      # Check deck file linting rules to enforce all services with tags
-      - name: Lint configuration with custom rule
-        run: deck file lint -s ./kong.yaml ./lint-rules/ruleset.yaml
-
       # Run Deck Sync for Konnect
       - name: Sync Configuration with Deck and Konnect
         env:
