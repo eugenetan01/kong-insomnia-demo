@@ -1,7 +1,7 @@
 _id: spc_1331b1e403b5400a83ad8e2173148fe4
 type: ApiSpec
 parentId: wrk_03837bb6835248c580142b800330c851
-modified: 1744032967766
+modified: 1744032991466
 created: 1730958500462
 fileName: InsomniaDemo
 contents: >
@@ -29,6 +29,12 @@ contents: >
     - ApiKeyAuth: []
     - OIDC: []
 
+    
+  tags:
+    - name: Transactions
+      description: Everything about transactions
+      externalDocs:
+        url: http://docs.bankong.com/transations
 
   paths:
     /transactions:
