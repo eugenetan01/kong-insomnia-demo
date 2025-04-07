@@ -1,0 +1,21 @@
+rules:
+  select_tags:
+    description: "Select Tags should be present."
+    given: $._info
+    severity: error
+    then:
+      field: select_tags
+      function: defined
+  select_tags_length:
+    description: "Select Tags should be present."
+    given: $._info
+    severity: error
+    then:
+      field: select_tags
+      function: schema
+      functionOptions:
+        schema:
+          type: "array"
+          minItems: 1
+          items:
+            type: "string"

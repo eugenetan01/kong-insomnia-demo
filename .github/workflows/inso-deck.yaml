@@ -3,7 +3,7 @@ name: Run Inso and Deck with Konnect
 on:
   push:
     branches:
-      - dev
+      - dev-linting
   pull_request:
     branches:
       - main
@@ -62,6 +62,9 @@ jobs:
       - name: Deck version
         run: deck version
 
+      - name: Run Spectral Lint
+        run: inso lint spec ./demo-scenes/openapi-spec.yaml --ruleset .spectral.yaml
+
       # Convert OpenAPI specs to DecK
       - name: Generate Kong declarative configuration from Spec
         run: deck file openapi2kong --spec ./demo-scenes/openapi-spec.yaml --output-file ./kong.yaml --select-tag gitops
@@ -71,6 +74,10 @@ jobs:
         run: |
           echo "Validating configuration with Konnect..."
           deck file validate ./kong.yaml
+
+      # Check deck file linting rules to enforce all services with tags
+      - name: Lint configuration with custom rule
+        run: deck file lint -s ./kong.yaml ./lint-rules/ruleset.yaml && echo $?
 
       # Run Deck Sync for Konnect
       - name: Sync Configuration with Deck and Konnect
