@@ -1,11 +1,11 @@
 _id: spc_1331b1e403b5400a83ad8e2173148fe4
 type: ApiSpec
 parentId: wrk_03837bb6835248c580142b800330c851
-modified: 1744030579844
+modified: 1744030905789
 created: 1730958500462
 fileName: InsomniaDemo
 contents: >
-  openapi: 3.0.2
+  openapi: 3.0.1
 
   info:
     version: 1.1.0
@@ -28,6 +28,12 @@ contents: >
   security:
     - ApiKeyAuth: []
     - OIDC: []
+
+  tags:
+    - name: Transactions
+      description: Everything about transactions
+      externalDocs:
+        url: http://docs.bankong.com/transations
 
   paths:
     /transactions:
@@ -66,7 +72,7 @@ contents: >
         description: Returns a post by id
         summary: Get specific transactions
         tags: ["Transactions"]
-        operationId: "get-transaction"
+        operationId: "getTransaction"
         parameters:
           - name: id
             in: path
