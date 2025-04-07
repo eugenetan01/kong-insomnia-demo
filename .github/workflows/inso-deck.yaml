@@ -63,7 +63,7 @@ jobs:
         run: deck version
 
       - name: Run Spectral Lint
-        run: inso lint spec
+        run: inso lint spec ./demo-scenes/wrong-format-spec.yaml
 
       # Convert OpenAPI specs to DecK
       - name: Generate Kong declarative configuration from Spec

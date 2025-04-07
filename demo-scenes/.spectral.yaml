@@ -1,0 +1,10 @@
+extends: "spectral:oas"
+
+rules:
+  operation-id-camelcase:
+    description: "Operation IDs should follow camelCase naming convention."
+    given: "$.paths[*][*].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
