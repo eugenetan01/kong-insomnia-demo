@@ -63,7 +63,7 @@ jobs:
         run: deck version
 
       - name: Run Spectral Lint
-        run: inso lint spec ./demo-scenes/openapi-spec.yaml --ruleset .spectral.yaml
+        run: inso lint spec
 
       # Convert OpenAPI specs to DecK
       - name: Generate Kong declarative configuration from Spec
