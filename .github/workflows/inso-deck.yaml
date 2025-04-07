@@ -62,7 +62,7 @@ jobs:
       - name: Deck version
         run: deck version
 
-      - name: Export blog spec
+      - name: Export openapi spec
         run: inso export spec spc_1331b1e403b5400a83ad8e2173148fe4 -o openapi.yaml
 
       - name: Run Spectral Lint
