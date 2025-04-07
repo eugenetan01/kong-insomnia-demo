@@ -63,7 +63,7 @@ jobs:
         run: deck version
 
       - name: Run Spectral Lint
-        run: inso lint spec ./.insomnia #./demo-scenes/openapi-spec.yaml
+        run: inso lint spec InsomniaDemo #./demo-scenes/openapi-spec.yaml
 
       # Convert OpenAPI specs to DecK
       - name: Generate Kong declarative configuration from Spec
