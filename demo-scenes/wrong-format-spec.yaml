@@ -21,12 +21,6 @@ security:
   - ApiKeyAuth: []
   - OIDC: []
 
-tags:
-  - name: Transactions
-    description: Everything about transactions
-    externalDocs:
-      url: http://docs.bankong.com/transations
-
 paths:
   /transactions:
     get:
