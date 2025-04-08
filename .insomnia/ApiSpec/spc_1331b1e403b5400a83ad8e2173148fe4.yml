@@ -1,7 +1,7 @@
 _id: spc_1331b1e403b5400a83ad8e2173148fe4
 type: ApiSpec
 parentId: wrk_03837bb6835248c580142b800330c851
-modified: 1744077337620
+modified: 1744077492044
 created: 1730958500462
 fileName: InsomniaDemo
 contents: >
@@ -43,7 +43,7 @@ contents: >
         description: Lists all transactions
         summary: List all transactions
         tags: ["Transactions"]
-        operationId: "list_Tranactions"
+        operationId: "listTranactions"
         responses:
           "200":
             description: List of transactions
