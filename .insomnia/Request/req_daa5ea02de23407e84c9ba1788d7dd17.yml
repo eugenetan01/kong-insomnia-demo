@@ -1,11 +1,11 @@
-_id: req_699a711aa1274c06b42669a10500b2eb
+_id: req_daa5ea02de23407e84c9ba1788d7dd17
 type: Request
-parentId: fld_0e80579e4264462ba5c6683c055eaefd
-modified: 1730958801260
-created: 1730958511889
+parentId: fld_015be6e80d27495bb0831a2922afc2e7
+modified: 1744076715557
+created: 1744076715557
 url: "{{ _.base_url }}/transactions"
 name: List all transactions
-description: ""
+description: Lists all transactions
 method: GET
 body: {}
 parameters: []
@@ -16,7 +16,7 @@ authentication:
   value: "{{ _.apikey }}"
   addTo: header
 preRequestScript: null
-metaSortKey: -1730958511889
+metaSortKey: -1744076715557
 isPrivate: false
 pathParameters: null
 afterResponseScript: null
