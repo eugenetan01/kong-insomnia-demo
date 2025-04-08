@@ -7,7 +7,7 @@ requestId: req_699a711aa1274c06b42669a10500b2eb
 name: Returns 200
 code: |
   const response1 = await insomnia.send();
-  // expect(response1.status).to.equal(200);
+  expect(response1.status).to.equal(200);
   // Parse the response body as JSON
   const body = JSON.parse(response1.data);
 
