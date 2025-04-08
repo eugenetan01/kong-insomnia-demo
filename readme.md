@@ -27,7 +27,7 @@
     - Highlight the linting error
     - Change back to camelCase
 
-5. Paste in the openapi.yaml below and see the contact section updated in the preview tab
+5. Adjust the `ListTransactions` to be `List_Transaction` to break camelCase in the api spec.
 
 6. Click generate collection in the settings and go to the collection tab to start testing APIs
 
@@ -41,7 +41,7 @@
 
 10. To showcase API-Ops, make an empty commit and push to dev branch to run the github action
     - Show the `.github/workflows/inso-deck.yaml` that it runs on push to dev branch and PR to master
-    - Show the steps in the github action: <br/> 
+    - Show the steps in the github action: <br/>
           - Running the insomnia unit tests defined <br/>
           - Converting my openapi specs to kong gateway config via decK <br/>
           - Validating the decK file <br/>
@@ -50,9 +50,11 @@
     - Run below commands to trigger
 
         ```bash
-        git commit --allow-empty -m "Trigger CI/CD pipeline"
+        git commit -m "Trigger CI/CD pipeline with the broken api spec"
         git push origin dev
         ```
+
+  11. See the github action fails as the linting step, because camelCase was broken as per the linting in spectral file
 # Cleanup
 
 1. Navigate to `./cleanup/konnect` folder and create a venv for the python project

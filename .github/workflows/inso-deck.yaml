@@ -24,12 +24,11 @@ jobs:
         with:
           node-version: "16"
 
-      # Install Inso
-      - name: Install Insomnia
-        run: |
-          curl -sL https://github.com/Kong/insomnia/releases/download/lib%408.6.1/inso-linux-8.6.1.tar.xz -o inso.tar.xz
-          sudo tar -xf inso.tar.xz -C /tmp/
-          cp /tmp/inso /usr/local/bin/
+      # Install Inso using official action
+      - name: Setup Inso
+        uses: kong/setup-inso@v1
+        with:
+          inso-version: "8.6.1"
 
       # Install docker-compose
       - name: Install Compose
@@ -51,12 +50,11 @@ jobs:
         run: |
           inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4
 
-      # Install Deck
-      - name: Install DecK
-        run: |
-          curl -sL https://github.com/kong/deck/releases/download/v1.40.2/deck_1.40.2_linux_amd64.tar.gz -o deck.tar.gz
-          tar -xf deck.tar.gz -C /tmp
-          cp /tmp/deck /usr/local/bin/
+      # Install Deck using official action
+      - name: Setup decK
+        uses: kong/setup-deck@v1
+        with:
+          version: "1.40.2"
 
       # Check Deck is installed
       - name: Deck version
