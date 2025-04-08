@@ -1,0 +1,16 @@
+_id: env_7ca6b67515d4468192a0e50f292fccd7
+type: Environment
+parentId: env_eeffcb9184b1ab85e651a6e3be6fee9c32521ebe
+modified: 1744076715554
+created: 1744076715554
+name: OpenAPI env host.docker.internal:3000
+data:
+  scheme: http
+  base_path: ""
+  host: host.docker.internal:3000
+  apikey: apikey
+  bearerToken: bearerToken
+dataPropertyOrder: null
+color: null
+isPrivate: false
+metaSortKey: 1744076715554
