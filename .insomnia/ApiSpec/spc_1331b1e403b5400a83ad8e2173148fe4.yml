@@ -1,7 +1,7 @@
 _id: spc_1331b1e403b5400a83ad8e2173148fe4
 type: ApiSpec
 parentId: wrk_03837bb6835248c580142b800330c851
-modified: 1744074571652
+modified: 1744075036757
 created: 1730958500462
 fileName: InsomniaDemo
 contents: >
@@ -22,12 +22,13 @@ contents: >
       email: support@bankong.com
 
   servers:
-    - url: http://host.docker.internal:3000
+    - url: http://localhost:3000
       description: local sandbox environment
 
   security:
     - ApiKeyAuth: []
     - OIDC: []
+
 
     
   tags:
