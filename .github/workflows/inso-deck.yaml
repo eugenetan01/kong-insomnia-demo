@@ -3,10 +3,7 @@ name: Run Inso and Deck with Konnect
 on:
   push:
     branches:
-      - dev-linting
-  pull_request:
-    branches:
-      - main
+      - master
 
 jobs:
   inso-and-deck:
@@ -30,26 +27,6 @@ jobs:
         with:
           inso-version: "8.6.1"
 
-      # Install docker-compose
-      - name: Install Compose
-        uses: ndeloof/install-compose-action@v0.0.1
-        with:
-          version: v2.1.0 # defaults to 'latest'
-          legacy: true # will also install in PATH as `docker-compose`
-
-      # Verify docker-compose running
-      - name: Install Compose
-        run: docker-compose --version
-
-      # Run docker-compose
-      - name: Docker-compose - Build the stack
-        run: docker-compose -f ./docker/docker-compose-bankong-combined_local_portchange.yaml up -d
-
-      # Run Inso tests // run this if you have a service deployed somewhere to test the test suite against
-      - name: Run Inso Tests
-        run: |
-          inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4
-
       # Install Deck using official action
       - name: Setup decK
         uses: kong/setup-deck@v1
@@ -60,15 +37,13 @@ jobs:
       - name: Deck version
         run: deck version
 
-      - name: Export openapi spec
-        run: inso export spec spc_1331b1e403b5400a83ad8e2173148fe4 -o openapi.yaml
-
-      - name: Run Spectral Lint
-        run: inso lint spec openapi.yaml
-
       # Convert OpenAPI specs to DecK
       - name: Generate Kong declarative configuration from Spec
-        run: deck file openapi2kong --spec openapi.yaml --output-file ./kong.yaml --select-tag gitops
+        run: deck file openapi2kong --spec ./demo-scenes/openapi-spec.yaml --output-file ./kong.yaml --select-tag gitops-eug
+
+      # Inject Plugins
+      - name: Add custom plugin + basic auth plugin
+        run: deck file add-plugins -s ./kong.yaml -o ./kong.yaml ./demo-scenes/inject-plugins/plugins.yaml
 
       # Optional: Validate Configuration with Deck for Konnect
       - name: Validate Configuration with Deck for Konnect
@@ -82,4 +57,10 @@ jobs:
           KONG_KONNECT_TOKEN: ${{ secrets.KONG_KONNECT_TOKEN }}
         run: |
           echo "Syncing configuration with Konnect..."
-          deck gateway sync ./kong.yaml --konnect-addr https://us.api.konghq.com --konnect-token $KONG_KONNECT_TOKEN --konnect-control-plane-name apiops-demo --select-tag gitops
+          deck gateway sync ./kong.yaml --konnect-addr https://au.api.konghq.com --konnect-token $KONG_KONNECT_TOKEN --konnect-control-plane-name demo-env --select-tag gitops-eug
+          sleep 10
+
+      # Run Inso tests
+      - name: Run Inso Tests
+        run: |
+          inso run test uts_7eb220b290744c2e95c1c9565999d780 --env env_038c957f9f1749c8bc57927d9655f4b4

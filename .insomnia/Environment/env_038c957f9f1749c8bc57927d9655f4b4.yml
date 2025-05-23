@@ -7,7 +7,7 @@ name: OpenAPI env localhost:3000
 data:
   scheme: http
   base_path: ""
-  host: localhost:3000
+  host: jgtmnnw6-8000.asse.devtunnels.ms
   apikey: apikey
   bearerToken: bearerToken
   base_url: "{{ _.host }}"
