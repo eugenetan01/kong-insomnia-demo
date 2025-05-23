@@ -39,6 +39,7 @@ contents: >
     description: Everything about transactions
     externalDocs:
       url: http://docs.bankong.com/transations
+
     
   paths:
     /transactions:
