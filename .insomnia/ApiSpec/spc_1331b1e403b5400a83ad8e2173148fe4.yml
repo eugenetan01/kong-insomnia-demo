@@ -25,51 +25,21 @@ contents: >
     - url: http://host.docker.internal:3000
       description: local sandbox environment
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-    
->>>>>>> 850ce7805c98f860c709087f5fb21db92459655c
   security:
     - ApiKeyAuth: []
     - OIDC: []
 
-
-
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 3762faae4109e3f7709ce9434b75feefe3f4d226
-    
   tags:
     - name: Transactions
       description: Everything about transactions
       externalDocs:
         url: http://docs.bankong.com/transations
 
-<<<<<<< HEAD
-=======
   - name: Transactions
     description: Everything about transactions
     externalDocs:
       url: http://docs.bankong.com/transations
-
-
-
-
-
-
-
     
->>>>>>> 850ce7805c98f860c709087f5fb21db92459655c
   paths:
     /transactions:
       get:
