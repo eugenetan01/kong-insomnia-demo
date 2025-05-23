@@ -1,7 +1,11 @@
 _id: spc_1331b1e403b5400a83ad8e2173148fe4
 type: ApiSpec
 parentId: wrk_03837bb6835248c580142b800330c851
+<<<<<<< HEAD
 modified: 1744077492044
+=======
+modified: 1744031489225
+>>>>>>> 850ce7805c98f860c709087f5fb21db92459655c
 created: 1730958500462
 fileName: InsomniaDemo
 contents: >
@@ -25,9 +29,24 @@ contents: >
     - url: http://host.docker.internal:3000
       description: local sandbox environment
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+    
+>>>>>>> 850ce7805c98f860c709087f5fb21db92459655c
   security:
     - ApiKeyAuth: []
     - OIDC: []
+
+
+
+
+
 
 
     
@@ -37,6 +56,21 @@ contents: >
       externalDocs:
         url: http://docs.bankong.com/transations
 
+<<<<<<< HEAD
+=======
+  - name: Transactions
+    description: Everything about transactions
+    externalDocs:
+      url: http://docs.bankong.com/transations
+
+
+
+
+
+
+
+    
+>>>>>>> 850ce7805c98f860c709087f5fb21db92459655c
   paths:
     /transactions:
       get:
@@ -53,7 +87,7 @@ contents: >
                   $ref: "#/components/schemas/TransactionsList"
       post:
         description: Initiate a transaction
-        summary: Create new transaction
+        summary: Create nw transaction
         tags: ["Transactions"]
         operationId: "initiateTransaction"
         requestBody:
