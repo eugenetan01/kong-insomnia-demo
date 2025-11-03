@@ -21,11 +21,11 @@ jobs:
         with:
           node-version: "16"
 
-      # Install Inso using official action
-      - name: Setup Inso
-        uses: kong/setup-inso@v1
-        with:
-          inso-version: "8.6.1"
+      - name: Install Insomnia
+        run: |
+          curl -sL https://github.com/Kong/insomnia/releases/download/core%4011.6.2/Insomnia.Core-11.6.2.tar.gz -o inso.tar.xz
+          sudo tar -xf inso.tar.xz -C /tmp/
+          cp /tmp/inso /usr/local/bin/
 
       # Install Deck using official action
       - name: Setup decK
