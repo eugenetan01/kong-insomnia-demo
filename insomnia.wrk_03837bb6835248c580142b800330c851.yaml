@@ -84,7 +84,6 @@ collection:
             }
         headers:
           - name: Content-Type
-            disabled: false
             value: application/json
         authentication:
           type: apikey
@@ -123,7 +122,6 @@ collection:
             }
         headers:
           - name: Content-Type
-            disabled: false
             value: application/json
         authentication:
           type: apikey
@@ -168,18 +166,16 @@ cookieJar:
     created: 1762162566754
     modified: 1762162866322
   cookies:
-    - key: .Tunnels.Relay.WebForwarding.Cookies
+    - id: e0bb3334-58c1-491d-9df2-b259d4c58e20
+      key: .Tunnels.Relay.WebForwarding.Cookies
       value: CfDJ8Cs4yarcs6pKkdu0hlKHsZv8oI-TmxwWVPnOr2tu7oSTR5aRJeKk6E8kA3X2djmWn_Ocgku44a1UY5229TZnhVLsTCEI37db-Wctbyw6UIv9YzCd1Ksgnx3hF5IKj1nXLeOS_JQFc_m1F5j4dW3jwfUUKC5Vv88UDmHGDGvbZ4PzAsFQwb0iqJ_y30dNragp4h-6JllTjWDFJYTXtzK87DFkIFrrhc69zB6uJ8-WGXDTakAJWXzm4o2Rv7E_F_zGncsYLcvFNciMLGjt4RHSN8Ytf1eKKxh0AH2Kw5hVkDAhJuOLum8VV2eifo-WB8CGHxyEG0fc4PY0SlrNVzukNS9wSq4PHtiTvMJe11h_8gokddicuYxA85j32fWW6D03LSHCsYD9o6PrcCN0UXsupFAdtAsx5rxJcvhOfmOqd3_oWFG4VuxfXb5wFwzl9y7XQ8r6zf1nZHBBwtVNvvFupUwIwgzAt5tUqZ6kMcMhZed7T4MobbdhzCxNV8Sv4oo1NMuRNVizm5d_dJPupGz6ik5HySPSf397xzssoPLQGCmgpv1oSkKC5iGgSnMTUSggk4IsRksgSxMK5ShTs0rXCR5WZztYdQBW7qVxxBN7PZn9ePPlPCE_edx_L0qHRaDJHec03eGnhSH8X7gH8G5iKOuac2d4i-q6b-SHN9TB7NBUyhTVsx_y-AsrQNtUYJl0FzXZF688axfFMPVdV9Sr5XJcxYZzLLGOQLBIS2MHtAo_SYGIq0HQCwA5L5WJxd4RbJmLGw3GHSy_q5YGdS2Ko0rZn13QTSEXP2cEP1-g2Lpb_Jg6FlYZ6OqyWiT9H9UgK4fG4b62SuXgVi9Ihao1SJ6GNf6LHd9nwwzfnLuV1cbJKZDovyA0fdIdfl8OVMAwbvWcnUvYIeYzVOS0lK4X9m5QuJfHIPnDIe-CSlAQTmLF
       domain: 64zk2q79-8000.asse.devtunnels.ms
       path: /
       secure: true
+      httpOnly: false
       extensions:
         - Partitioned
       hostOnly: true
-      creation: 2025-11-03T09:40:04.181Z
-      lastAccessed: 2025-11-03T09:41:06.322Z
-      sameSite: none
-      id: e0bb3334-58c1-491d-9df2-b259d4c58e20
 environments:
   name: Base Environment
   meta:
