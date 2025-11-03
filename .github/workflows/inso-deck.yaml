@@ -21,11 +21,14 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Install Insomnia
+      # Install Inso manually from tar file
+      - name: Install Inso CLI
         run: |
-          curl -sL https://github.com/Kong/insomnia/releases/download/core%4011.6.2/Insomnia.Core-11.6.2.tar.gz -o inso.tar.xz
-          sudo tar -xf inso.tar.xz -C /tmp/
-          cp /tmp/inso /usr/local/bin/
+          curl -sL https://github.com/Kong/insomnia/releases/download/core%4011.6.2/Insomnia.Core-11.6.2.tar.gz -o inso.tar.gz
+          tar -xzf inso.tar.gz -C /tmp/
+          sudo cp /tmp/inso /usr/local/bin/
+          chmod +x /usr/local/bin/inso
+          inso --version
 
       # Install Deck using official action
       - name: Setup decK
