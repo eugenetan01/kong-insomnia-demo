@@ -8,173 +8,18 @@ meta:
 collection:
   - name: Transactions
     meta:
-      id: fld_0e80579e4264462ba5c6683c055eaefd
-      created: 1730958511889
-      modified: 1730958511889
-      sortKey: -1730958511889
-      description: Everything about transactions
-    children:
-      - url: "{{ _.base_url }}/transactions"
-        name: List all transactions
-        meta:
-          id: req_699a711aa1274c06b42669a10500b2eb
-          created: 1730958511889
-          modified: 1730958801260
-          isPrivate: false
-          description: ""
-          sortKey: -1730958511889
-        method: GET
-        authentication:
-          type: apikey
-          key: apikey
-          value: "{{ _.apikey }}"
-          addTo: header
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: "{{ _.base_url }}/transactions"
-        name: Create new transaction
-        meta:
-          id: req_28ffd4f3c5c54bc6bb29fcc97cb17660
-          created: 1730958511890
-          modified: 1730958511890
-          isPrivate: false
-          description: ""
-          sortKey: -1730958511890
-        method: POST
-        body:
-          mimeType: application/json
-          text: |-
-            {
-              "id": 42,
-              "source": "GR872659435350353",
-              "senderName": "Max Mustermann",
-              "destination": "DE8412325587359375895",
-              "amount": 42,
-              "currency": "EUR",
-              "subject": "Invoice #42-08/15"
-            }
-        headers:
-          - name: Content-Type
-            disabled: false
-            value: application/json
-        authentication:
-          type: apikey
-          key: apikey
-          value: "{{ _.apikey }}"
-          addTo: header
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: "{{ _.base_url }}/transactions/{{ _.id }}"
-        name: Get specific transactions
-        meta:
-          id: req_33266309cf76483696bed7a7f4c36d4a
-          created: 1730958511890
-          modified: 1730958511890
-          isPrivate: false
-          description: ""
-          sortKey: -1730958511890
-        method: GET
-        authentication:
-          type: apikey
-          key: apikey
-          value: "{{ _.apikey }}"
-          addTo: header
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: "{{ _.base_url }}/transactions/{{ _.id }}"
-        name: Update a transaction
-        meta:
-          id: req_58ceed56154e49a09631271c78c06c6a
-          created: 1730958511890
-          modified: 1730958511890
-          isPrivate: false
-          description: ""
-          sortKey: -1730958511890
-        method: PATCH
-        body:
-          mimeType: application/json
-          text: |-
-            {
-              "id": 42,
-              "source": "GR872659435350353",
-              "senderName": "Max Mustermann",
-              "destination": "DE8412325587359375895",
-              "amount": 42,
-              "currency": "EUR",
-              "subject": "Invoice #42-08/15"
-            }
-        headers:
-          - name: Content-Type
-            disabled: false
-            value: application/json
-        authentication:
-          type: apikey
-          key: apikey
-          value: "{{ _.apikey }}"
-          addTo: header
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: "{{ _.base_url }}/transactions/{{ _.id }}"
-        name: Cancel a transaction
-        meta:
-          id: req_64dec9afb77940e5a1348c8f17324f85
-          created: 1730958511890
-          modified: 1730958511890
-          isPrivate: false
-          description: ""
-          sortKey: -1730958511890
-        method: DELETE
-        authentication:
-          type: apikey
-          key: apikey
-          value: "{{ _.apikey }}"
-          addTo: header
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-  - name: Transactions
-    meta:
       id: fld_015be6e80d27495bb0831a2922afc2e7
       created: 1744076715555
       modified: 1744076715555
       sortKey: -1744076715555
       description: Everything about transactions
     children:
-      - url: "{{ _.base_url }}/transactions"
+      - url: localhost:8000/transactions
         name: List all transactions
         meta:
           id: req_daa5ea02de23407e84c9ba1788d7dd17
           created: 1744076715557
-          modified: 1744076715557
+          modified: 1762162915939
           isPrivate: false
           description: Lists all transactions
           sortKey: -1744076715557
@@ -321,7 +166,20 @@ cookieJar:
   meta:
     id: jar_eeffcb9184b1ab85e651a6e3be6fee9c32521ebe
     created: 1762162566754
-    modified: 1762162566754
+    modified: 1762162866322
+  cookies:
+    - key: .Tunnels.Relay.WebForwarding.Cookies
+      value: CfDJ8Cs4yarcs6pKkdu0hlKHsZv8oI-TmxwWVPnOr2tu7oSTR5aRJeKk6E8kA3X2djmWn_Ocgku44a1UY5229TZnhVLsTCEI37db-Wctbyw6UIv9YzCd1Ksgnx3hF5IKj1nXLeOS_JQFc_m1F5j4dW3jwfUUKC5Vv88UDmHGDGvbZ4PzAsFQwb0iqJ_y30dNragp4h-6JllTjWDFJYTXtzK87DFkIFrrhc69zB6uJ8-WGXDTakAJWXzm4o2Rv7E_F_zGncsYLcvFNciMLGjt4RHSN8Ytf1eKKxh0AH2Kw5hVkDAhJuOLum8VV2eifo-WB8CGHxyEG0fc4PY0SlrNVzukNS9wSq4PHtiTvMJe11h_8gokddicuYxA85j32fWW6D03LSHCsYD9o6PrcCN0UXsupFAdtAsx5rxJcvhOfmOqd3_oWFG4VuxfXb5wFwzl9y7XQ8r6zf1nZHBBwtVNvvFupUwIwgzAt5tUqZ6kMcMhZed7T4MobbdhzCxNV8Sv4oo1NMuRNVizm5d_dJPupGz6ik5HySPSf397xzssoPLQGCmgpv1oSkKC5iGgSnMTUSggk4IsRksgSxMK5ShTs0rXCR5WZztYdQBW7qVxxBN7PZn9ePPlPCE_edx_L0qHRaDJHec03eGnhSH8X7gH8G5iKOuac2d4i-q6b-SHN9TB7NBUyhTVsx_y-AsrQNtUYJl0FzXZF688axfFMPVdV9Sr5XJcxYZzLLGOQLBIS2MHtAo_SYGIq0HQCwA5L5WJxd4RbJmLGw3GHSy_q5YGdS2Ko0rZn13QTSEXP2cEP1-g2Lpb_Jg6FlYZ6OqyWiT9H9UgK4fG4b62SuXgVi9Ihao1SJ6GNf6LHd9nwwzfnLuV1cbJKZDovyA0fdIdfl8OVMAwbvWcnUvYIeYzVOS0lK4X9m5QuJfHIPnDIe-CSlAQTmLF
+      domain: 64zk2q79-8000.asse.devtunnels.ms
+      path: /
+      secure: true
+      extensions:
+        - Partitioned
+      hostOnly: true
+      creation: 2025-11-03T09:40:04.181Z
+      lastAccessed: 2025-11-03T09:41:06.322Z
+      sameSite: none
+      id: e0bb3334-58c1-491d-9df2-b259d4c58e20
 environments:
   name: Base Environment
   meta:
@@ -336,14 +194,14 @@ environments:
       meta:
         id: env_038c957f9f1749c8bc57927d9655f4b4
         created: 1730958511888
-        modified: 1744075182408
+        modified: 1762163065147
         isPrivate: false
         sortKey: 1730958511888
       data:
-        scheme: http
+        scheme: https
         base_path: ""
-        host: jgtmnnw6-8000.asse.devtunnels.ms
-        apikey: apikey
+        host: 64zk2q79-8000.asse.devtunnels.ms
+        apikey: eugenekey
         bearerToken: bearerToken
         base_url: "{{ _.host }}"
         id: b88f7029-fa93-41a5-9462-4884e544bf63
