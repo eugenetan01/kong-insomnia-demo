@@ -227,7 +227,7 @@ spec:
 
 
         :closed_lock_with_key: this api is protected by either OpenID Connect or
-        api-key v1
+        api-key v3
 
 
         :bulb: this API is rate limited
