@@ -4,7 +4,7 @@ meta:
   id: wrk_03837bb6835248c580142b800330c851
   created: 1730958463799
   modified: 1730958463799
-  description: Insomnia Workspace for https://github.com/eugenetan01/kong-insomnia-demo.git}
+  description: Insomnia Workspace for https://github.com/eugenetan01/kong-insomnia-demo.git} merge conflict
 collection:
   - name: Transactions
     meta:
@@ -15,7 +15,7 @@ collection:
       description: Everything about transactions
     children:
       - url: localhost:8000/transactions
-        name: List_ all transactions
+        name: List all transactions
         meta:
           id: req_daa5ea02de23407e84c9ba1788d7dd17
           created: 1744076715557
