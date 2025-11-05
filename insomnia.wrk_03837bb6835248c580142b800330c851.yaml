@@ -1,0 +1,419 @@
+type: spec.insomnia.rest/5.0
+name: kong-insomnia-demo.git
+meta:
+  id: wrk_03837bb6835248c580142b800330c851
+  created: 1730958463799
+  modified: 1730958463799
+  description: Insomnia Workspace for https://github.com/eugenetan01/kong-insomnia-demo.git}
+collection:
+  - name: Transactions
+    meta:
+      id: fld_0e80579e4264462ba5c6683c055eaefd
+      created: 1730958511889
+      modified: 1730958511889
+      sortKey: -1730958511889
+      description: Everything about transactions
+    children:
+      - url: "{{ _.base_url }}/transactions"
+        name: List all transactions
+        meta:
+          id: req_699a711aa1274c06b42669a10500b2eb
+          created: 1730958511889
+          modified: 1730958801260
+          isPrivate: false
+          description: ""
+          sortKey: -1730958511889
+        method: GET
+        authentication:
+          type: apikey
+          key: apikey
+          value: "{{ _.apikey }}"
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/transactions"
+        name: Create new transaction
+        meta:
+          id: req_28ffd4f3c5c54bc6bb29fcc97cb17660
+          created: 1730958511890
+          modified: 1730958511890
+          isPrivate: false
+          description: ""
+          sortKey: -1730958511890
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "id": 42,
+              "source": "GR872659435350353",
+              "senderName": "Max Mustermann",
+              "destination": "DE8412325587359375895",
+              "amount": 42,
+              "currency": "EUR",
+              "subject": "Invoice #42-08/15"
+            }
+        headers:
+          - name: Content-Type
+            disabled: false
+            value: application/json
+        authentication:
+          type: apikey
+          key: apikey
+          value: "{{ _.apikey }}"
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/transactions/{{ _.id }}"
+        name: Get specific transactions
+        meta:
+          id: req_33266309cf76483696bed7a7f4c36d4a
+          created: 1730958511890
+          modified: 1730958511890
+          isPrivate: false
+          description: ""
+          sortKey: -1730958511890
+        method: GET
+        authentication:
+          type: apikey
+          key: apikey
+          value: "{{ _.apikey }}"
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/transactions/{{ _.id }}"
+        name: Update a transaction
+        meta:
+          id: req_58ceed56154e49a09631271c78c06c6a
+          created: 1730958511890
+          modified: 1730958511890
+          isPrivate: false
+          description: ""
+          sortKey: -1730958511890
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "id": 42,
+              "source": "GR872659435350353",
+              "senderName": "Max Mustermann",
+              "destination": "DE8412325587359375895",
+              "amount": 42,
+              "currency": "EUR",
+              "subject": "Invoice #42-08/15"
+            }
+        headers:
+          - name: Content-Type
+            disabled: false
+            value: application/json
+        authentication:
+          type: apikey
+          key: apikey
+          value: "{{ _.apikey }}"
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/transactions/{{ _.id }}"
+        name: Cancel a transaction
+        meta:
+          id: req_64dec9afb77940e5a1348c8f17324f85
+          created: 1730958511890
+          modified: 1730958511890
+          isPrivate: false
+          description: ""
+          sortKey: -1730958511890
+        method: DELETE
+        authentication:
+          type: apikey
+          key: apikey
+          value: "{{ _.apikey }}"
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_eeffcb9184b1ab85e651a6e3be6fee9c32521ebe
+    created: 1730958463822
+    modified: 1730958463822
+    isPrivate: false
+  subEnvironments:
+    - name: OpenAPI env localhost:3000
+      meta:
+        id: env_038c957f9f1749c8bc57927d9655f4b4
+        created: 1730958511888
+        modified: 1730958794085
+        isPrivate: false
+        sortKey: 1730958511888
+      data:
+        scheme: http
+        base_path: ""
+        host: localhost:3000
+        apikey: apikey
+        bearerToken: bearerToken
+        base_url: "{{ _.host }}"
+        id: b88f7029-fa93-41a5-9462-4884e544bf63
+spec:
+  contents:
+    openapi: 3.0.1
+    info:
+      version: 1.1.0
+      title: Transactions API of BanKonG
+      description: >
+        This API provides you access to the transactions of a logged in user.
+        You can get, create, change and delete transactions (of course always
+        depending on permissions).
+
+
+        :closed_lock_with_key: this api is protected by either OpenID Connect or
+        api-key
+
+
+        :bulb: this API is rate limited
+      contact:
+        name: BanKong PointOfContact
+        url: http://www.bankong.com/support
+        email: support@bankong.com
+    servers:
+      - url: http://localhost:3000
+        description: local sandbox environment
+    tags:
+      - name: Transactions
+        description: Everything about transactions
+        externalDocs:
+          url: http://docs.bankong.com/transations
+    paths:
+      /transactions:
+        get:
+          description: Lists all transactions
+          summary: List all transactions
+          tags:
+            - Transactions
+          operationId: listTranactions
+          responses:
+            "200":
+              description: List of transactions
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/TransactionsList"
+        post:
+          description: Initiate a transaction
+          summary: Create nw transaction
+          tags:
+            - Transactions
+          operationId: initiateTransaction
+          requestBody:
+            content:
+              application/json; charset=utf-8:
+                schema:
+                  $ref: "#/components/schemas/Transaction"
+          responses:
+            "200":
+              description: initiated transaction
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/Transaction"
+      /transactions/{id}:
+        get:
+          description: Returns a post by id
+          summary: Get specific transactions
+          tags:
+            - Transactions
+          operationId: getTransaction
+          parameters:
+            - name: id
+              in: path
+              required: true
+              description: The transaction id.
+              schema:
+                $ref: "#/components/schemas/TransactionId"
+          responses:
+            "200":
+              description: Transaction received
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/Transaction"
+            "404":
+              description: Transaction not found
+        patch:
+          description: Change a transaction
+          summary: Update a transaction
+          tags:
+            - Transactions
+          operationId: changeTransaction
+          requestBody:
+            content:
+              application/json; charset=utf-8:
+                schema:
+                  $ref: "#/components/schemas/Transaction"
+          parameters:
+            - name: id
+              in: path
+              required: true
+              description: The transaction id.
+              schema:
+                $ref: "#/components/schemas/TransactionId"
+          responses:
+            "200":
+              description: Transaction changed
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/Transaction"
+            "404":
+              description: Transaction not found
+        delete:
+          description: Cancel a transaction
+          summary: Cancel a transaction
+          tags:
+            - Transactions
+          operationId: cancelTransaction
+          parameters:
+            - name: id
+              in: path
+              required: true
+              description: The transaction id.
+              schema:
+                $ref: "#/components/schemas/TransactionId"
+          responses:
+            "200":
+              description: Transaction cancelled
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/Transaction"
+            "404":
+              description: Transaction not found
+    components:
+      schemas:
+        TransactionId:
+          type: integer
+          description: Unique identifier for the transaction. This identifier is both
+            unique and immutable.
+          example: 42
+        TransactionsList:
+          type: array
+          items:
+            $ref: "#/components/schemas/Transaction"
+        Transaction:
+          type: object
+          required:
+            - id
+            - source
+            - senderName
+            - destination
+            - amount
+            - currency
+            - subject
+          properties:
+            id:
+              $ref: "#/components/schemas/TransactionId"
+            source:
+              type: string
+              description: The IBAN of the sending account
+              pattern: ^[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}$
+              example: GR872659435350353
+            senderName:
+              type: string
+              example: Max Mustermann
+            destination:
+              type: string
+              description: The IBAN of the receiving account
+              pattern: ^[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}$
+              example: DE8412325587359375895
+            amount:
+              description: The amount of the transaction. Cannot be negative
+              type: number
+              minimum: 0.01
+              multipleOf: 0.01
+              example: 42
+            currency:
+              description: A code allocated to a currency by a Maintenance Agency under an
+                international identification scheme, as described in the latest
+                edition of the international standard ISO 4217
+              type: string
+              pattern: ^[A-Z]{3,3}$
+              example: EUR
+            subject:
+              type: string
+              description: Description that may be available for the statement fee.
+              minLength: 0
+              maxLength: 128
+              example: "Invoice #42-08/15"
+      securitySchemes:
+        ApiKeyAuth:
+          type: apiKey
+          in: header
+          name: apikey
+        OIDC:
+          type: http
+          scheme: bearer
+          bearerFormat: JWT
+  meta:
+    id: spc_1331b1e403b5400a83ad8e2173148fe4
+    created: 1730958500462
+    modified: 1744031489225
+testSuites:
+  - name: New Suite
+    meta:
+      id: uts_7eb220b290744c2e95c1c9565999d780
+      created: 1730958514817
+      modified: 1730958514817
+      sortKey: -1730958514817
+    tests:
+      - name: Returns 200
+        meta:
+          id: ut_4be0643defd24d1cbf9b08d1fd9d6d5c
+          created: 1730958517159
+          modified: 1730958543814
+          sortKey: -1730958517159
+        requestId: req_699a711aa1274c06b42669a10500b2eb
+        code: |
+          const response1 = await insomnia.send();
+          expect(response1.status).to.equal(200);
+          // Parse the response body as JSON
+          const body = JSON.parse(response1.data);
+
+          // Check the response time
+          expect(response1.responseTime).to.be.at.most(2000);
+
+          expect(body).to.be.an('array');
+
+          body.forEach((item) => {
+            expect(item).to.have.property('id');
+          });
+          // Check the existence of specific properties
