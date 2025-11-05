@@ -15,7 +15,7 @@ collection:
       description: Everything about transactions
     children:
       - url: localhost:8000/transactions
-        name: List all transactions
+        name: List_ all transactions
         meta:
           id: req_daa5ea02de23407e84c9ba1788d7dd17
           created: 1744076715557
@@ -352,7 +352,8 @@ spec:
       schemas:
         TransactionId:
           type: integer
-          description: Unique identifier for the transaction. This identifier is both
+          description:
+            Unique identifier for the transaction. This identifier is both
             unique and immutable.
           example: 42
         TransactionsList:
@@ -392,7 +393,8 @@ spec:
               multipleOf: 0.01
               example: 42
             currency:
-              description: A code allocated to a currency by a Maintenance Agency under an
+              description:
+                A code allocated to a currency by a Maintenance Agency under an
                 international identification scheme, as described in the latest
                 edition of the international standard ISO 4217
               type: string
